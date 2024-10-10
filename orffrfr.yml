@@ -25,7 +25,7 @@ stages:
                 --organization https://msazure.visualstudio.com/ \
                 --project Antares \
                 --query id \
-                --parameters "github_branchname=$(System.PullRequest.SourceBranch)"
+                --parameters "github_branchname=$(system.pullRequest.sourceBranch)"
               )
               echo "Pipeline run has been initiated with RUN ID: " $RUN_ID
               echo "##vso[task.setvariable variable=RUN_ID_BUILD_SDK;]$RUN_ID"
@@ -84,7 +84,7 @@ stages:
                 --organization https://msazure.visualstudio.com/ \
                 --project Antares \
                 --query id \
-                --parameters "github_branchname=$(System.PullRequest.SourceBranch)"
+                --parameters "github_branchname=$(system.pullRequest.sourceBranch)"
               )
               echo "Pipeline run has been initiated with RUN ID: " $RUN_ID
               echo "##vso[task.setvariable variable=RUN_ID_BUILD_IMAGE;]$RUN_ID"
@@ -154,7 +154,7 @@ stages:
                 --organization https://msazure.visualstudio.com/ \
                 --project Antares \
                 --query id \
-                --parameters "BuildNumber=$BUILD_NUMBER_BUILD_IMAGE" "github_branchname=$(System.PullRequest.SourceBranch)"
+                --parameters "BuildNumber=$BUILD_NUMBER_BUILD_IMAGE" "github_branchname=$(system.pullRequest.sourceBranch)"
               )
               echo "Pipeline run has been initiated with RUN ID: " $RUN_ID
               echo "##vso[task.setvariable variable=RUN_ID_TEST;]$RUN_ID"
